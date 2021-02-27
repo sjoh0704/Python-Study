@@ -1,0 +1,10 @@
+BEGIN TRANSACTION;
+CREATE TABLE users(id INTEGER PRIMARY KEY,     username text, email text, phone text,  website text, regdate text);
+INSERT INTO "users" VALUES(1,'oh','sjoh0704@daum.net','01012341234','github.com/sjoh0704','2021-02-27 18:18:16');
+INSERT INTO "users" VALUES(2,'oh','sjoh0704@daum.net','01012341234','github.com/sjoh0704','2021-02-27 18:18:16');
+INSERT INTO "users" VALUES(3,'oh','sjoh0704@daum.net','01012341234','github.com/sjoh0704','2021-02-27 18:18:16');
+INSERT INTO "users" VALUES(4,'oh','sjoh0704@daum.net','01012341234','github.com/sjoh0704','2021-02-27 18:18:16');
+INSERT INTO "users" VALUES(5,'oh','sjoh0704@daum.net','01012341234','github.com/sjoh0704','2021-02-27 18:18:16');
+INSERT INTO "users" VALUES(6,'oh','sjoh0704@daum.net','01012341234','github.com/sjoh0704','2021-02-27 18:18:16');
+INSERT INTO "users" VALUES(7,'oh','sjoh0704@daum.net','01012341234','github.com/sjoh0704','2021-02-27 18:18:16');
+COMMIT;
