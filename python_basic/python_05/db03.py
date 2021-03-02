@@ -19,3 +19,7 @@ for user in c.execute("SELECT * FROM users"):
 c.execute("DELETE FROM users WHERE id=?",(2,))
 c.execute("DELETE FROM users WHERE id='%d'", (3, ))
 c.execute("DELETE FROM users WHERE id=:ID", {"ID":5})
+
+
+# 닫기 
+conn.close()

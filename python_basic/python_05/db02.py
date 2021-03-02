@@ -68,13 +68,7 @@ with conn:
         for line in conn.iterdump():
             f.write('%s\n' % line)
         print("Dump Print Complete")
-
-
-
-with conn:
-    with open("dff", "w") as f:
-        for line in conn.iterdump():
-            f.write(line + "\n")
+# - 덤프를 떠옴으로써 다른 곳에 데이터베이스를 쉽게 구축할 수 있다. 
 
 
 # c.execute("SELECT * FROM users WHERE username=?", ('oh', ))

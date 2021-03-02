@@ -1,0 +1,55 @@
+<!-- html이나 ! + tap으로 html형식을 구성할 수 있다.  -->
+
+
+<!DOCTYPE html>
+<!-- html 요소는 최상위 요소로 root라고도 한다. -->
+<html lang="en">
+<head>
+    <!-- 대부분 유니코드 UTF-8을 사용하고 
+    지원하지 않는 언어에 대해서는 깨짐현상 발생 -->
+    <meta charset="UTF-8">
+    
+    <!-- 최신 버전을 사용하는 브라우저로 렌더링을 하라 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 기기의 크기에 맞춰 브라우저를 적용시켜라, 배율을 1.0배 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 문서의 제목을 나타내준다. -->
+    <title>Document</title>
+
+    <!-- rel은 연결할 파일과의 관계
+    href 파일의 위치를 적는다 
+    -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="normalize.css">
+</head>
+<body>
+    <header class="header">
+        <p class="web-title"><strong>django</strong></p>
+        <p class="web-side">OVERVIEW   NEWS   COMMUNITY   CODE   APBOUT   DONATE</p>
+
+    </header>
+    <main class="main">
+        <div class="hero-section">
+            <p class="hero-section-text">Django makes it easier to build better Web
+                apps more quickly and with less code.</p>
+            <p class="button">
+                Get Started with Django
+            </p>
+
+
+            </div>
+        <div class="main-content">메인</div>
+        <div class="side-content">사이드</div>
+    </main>
+
+    <footer class="content-info">
+        <div class="links">링크2</div>
+        <div class="footer">푸터</div>
+
+
+    </footer>
+    
+</body>
+</html>
