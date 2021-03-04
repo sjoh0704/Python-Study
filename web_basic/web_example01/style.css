@@ -34,7 +34,7 @@ a {
 }
 .container-float {
   max-width: 1400px;
-  background: red;
+  background: White;
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
@@ -112,13 +112,62 @@ a {
 .main-content {
   width: 70%;
   float: left;
-  background: blue;
+  background: white;
 }
+.mailing-title {
+  font-weight: 400;
+  margin: 40px 0 20px 0;
+  font-size: 2.6rem;
+  letter-spacing: -1px;
+  color: aqua;
+}
+
+.mailing-layout {
+  padding-top: 10px;
+}
+.mailing-layout::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.mailing {
+  float: left;
+  width: 48%;
+}
+.mailing:first-child {
+  margin-right: 4%;
+}
+.mailing-form {
+  margin: 10px 0 30px;
+  position: relative;
+}
+.mailing-form > label {
+  visibility: hidden;
+}
+input[type="email"] {
+  width: 100%;
+  border: 1px solid #cfe3dc;
+  border-radius: 4px;
+  height: 5rem;
+  padding: 6px 80px 8px 10px;
+  /* padding-right: 20px; */
+}
+.mailing-form-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  border: 0;
+  background: transparent;
+  color: #44b78b;
+  cursor: pointer;
+}
+
 .side-content {
   width: 30%;
   float: right;
   background: pink;
 }
+
 /* footer */
 .content-info {
   clear: both;
