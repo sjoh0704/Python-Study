@@ -2,55 +2,111 @@
 
 /* 모든 요소 선택 */
 *,
-*::before *::after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
-/* 헤더 */
-.header {
-  height: 64px;
-  color: white;
-  background-color: green;
+html {
+  font-size: 10px;
 }
 
-.web-title {
-  margin-top: 10px;
-  text-align: center;
-  float: left;
-  width: 30%;
-  font-size: 40px;
+body {
+  font-size: 1.8rem;
+  min-width: 1060px;
+  font-family: sans-serif;
 }
-.web-side {
-  margin-top: 10px;
+a {
+  text-decoration: none;
+}
+
+/* 헤더 */
+.header {
+  padding: 10px;
+  background: #0c4b33;
+  height: 72px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+.container-float {
+  max-width: 1400px;
+  background: red;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+.container-float::after {
+  clear: both;
+  display: block;
+  content: " ";
+}
+.logo {
+  margin: 0px;
+  padding-left: inherit;
   position: absolute;
-  font-size: 13px;
-  top: 20px;
-  right: 20px;
+  top: 0;
+  left: 0;
+}
+.logo > a {
+  color: white;
+}
+.nav {
+  text-align: right;
+}
+.list-item {
+  font-weight: 700;
+  display: inline-block;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+.list {
+  margin: 0;
+  font-family: 0;
+}
+
+.list-item > a {
+  color: white;
+  display: block;
+  padding: 10px;
+}
+.list-item > a:hover {
+  color: #c9f0dd;
 }
 
 /* 메인 */
 .main {
-  clear: both;
-  background: white;
 }
 .hero-section {
-  height: 255px;
-  background-color: white;
-}
-
-.hero-section-text {
-  font-size: 36px;
-
+  background: white;
   text-align: center;
-  margin: 100px;
+  padding: 50px 0;
+  border-bottom: 1px solid #cfe3dc;
 }
-.button {
-  color: aliceblue;
-  margin: 50px;
-  background: green;
-  width: 200px;
-  height: 40px;
-  font-weight: 700;
-  font-size: 18px;
+.intro-desc {
+  margin: 40px auto 50px;
+  width: 700px;
+  font-weight: 300;
+  font-size: 3.6rem;
+  line-height: 4rem;
+}
+
+.cta {
+  color: white;
+  width: 300px;
+  font-weight: 400;
+  margin: 0 auto 60px;
+  display: block;
+  padding: 20px 50px;
+  border-radius: 8px;
+  background: #44b78b;
+}
+.cta:hover {
+  background: #51be95;
+  /* background: white; */
 }
 
 .main-content {
