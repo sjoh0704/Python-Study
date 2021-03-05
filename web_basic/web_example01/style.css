@@ -17,6 +17,25 @@ body {
 }
 a {
   text-decoration: none;
+  color: #44b78b;
+}
+
+/* CTA */
+
+.cta {
+  color: white;
+
+  font-weight: 400;
+
+  display: block;
+
+  border-radius: 8px;
+  background: #44b78b;
+}
+
+.cta:hover {
+  background: #51be95;
+  /* background: white; */
 }
 
 /* 헤더 */
@@ -94,22 +113,16 @@ a {
   line-height: 4rem;
 }
 
-.cta {
-  color: white;
+.hero-cta {
   width: 300px;
-  font-weight: 400;
   margin: 0 auto 60px;
-  display: block;
   padding: 20px 50px;
-  border-radius: 8px;
-  background: #44b78b;
-}
-.cta:hover {
-  background: #51be95;
-  /* background: white; */
 }
 
+/* 메인 콘텐트 */
+
 .main-content {
+  padding-right: 20px;
   width: 70%;
   float: left;
   background: white;
@@ -150,7 +163,6 @@ input[type="email"] {
   border-radius: 4px;
   height: 5rem;
   padding: 6px 80px 8px 10px;
-  /* padding-right: 20px; */
 }
 .mailing-form-btn {
   position: absolute;
@@ -162,10 +174,79 @@ input[type="email"] {
   cursor: pointer;
 }
 
+/* 사이드 콘텐트 */
+
+.side-content h2 {
+  font-style: 400;
+  font-size: 2.4rem;
+  border-bottom: 1px solid #cfe3dc;
+}
+
 .side-content {
+  padding: 20px;
+  border-left: 1px solid #cfe3dc;
   width: 30%;
-  float: right;
-  background: pink;
+  float: left;
+  background: white;
+}
+.side-content a:hover {
+  color: #25c488;
+}
+.container-side-cta {
+  text-align: center;
+}
+.side-cta {
+  width: 330px;
+  padding: 16px 24px;
+  margin: 40px, auto;
+}
+.cta.side-cta:hover {
+  color: white;
+}
+
+.side-cta em {
+  font-style: normal;
+  color: #c9f0dd;
+}
+.more {
+  display: block;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.more::after {
+  content: " >";
+}
+.news-article .news-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+.news-article .news-desc {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.news-article .news-meta {
+  font-size: 1.5rem;
+  color: #000910;
+}
+
+.list-communities {
+  margin: 0;
+  padding: 20px 0px;
+}
+
+.list-communities .community-title {
+  font-size: 1.4rem;
+  color: #44b78b;
+}
+.list-communities .community-desc {
+  font-size: 1.4rem;
+  margin: 10px;
+}
+.list-communities .community-desc:nth-child(2) {
+  margin: 14px;
+  font-size: 1.4rem;
 }
 
 /* footer */
