@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./register.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mt-5">회원가입</h1>
+                
+            </div>        
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {{error}}  
+            </div>        
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <form action="" method="post">
+                    {%csrf_token%}
+                <div class="input-group">
+                    <span class="input-group-addon" id="username">사용자 이름</span>
+                    <input type="text" class="form-control" placeholder="Enter username" name="username">
+                </div>
+                <br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="password">사용자 이메일</span>
+                    <input type="email" class="form-control" placeholder="Enter email" name="useremail">
+                </div>
+                <br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="password">비밀번호</span>
+                    <input type="text" class="form-control" placeholder="Enter password" name="password">
+                </div>
+                <br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="password-check">비밀번호 확인</span>
+                    <input type="text" class="form-control" placeholder="Enter password" name="password-check">
+                </div>
+                <br/>
+                <button type="submit" class="btn btn-primary">등록</button>
+                  <br/>
+                </form>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    
+</body>
+</html>
