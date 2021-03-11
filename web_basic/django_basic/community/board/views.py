@@ -2,6 +2,8 @@ from django.db import models
 from django.shortcuts import redirect, render
 from .models import Board
 from .form import BoardForm
+
+from fcuser.models import Fcuser
 # Create your views here.
 
 
@@ -10,13 +12,16 @@ def board_write(request):
     if request.method == "POST":
         form = BoardForm(request.POST)
         if form.is_valid():
+            title = form.cleaned_data['title']
+            contents = form.cleaned_data['contents']
 
-            # request.session['user'] = form.user_id
-            title = request.POST.get("title", None)
-            contents = request.POST.get("contents", None)
+            board = Board()
+            board.title = title
+            board.contents = contents
+            user_id = request.session.get('user')
+            fcuser = Fcuser.objects.get(pk=user_id)
+            board.writer = fcuser
 
-            board = Board(contents=contents, title=title,
-                          writer=None, registered_dttm=None)
             board.save()
 
             return redirect("/board/list")

@@ -2,29 +2,38 @@
 <div class="row">
   <div class="col-12">
     <form action="" method="post">
-        {%csrf_token%}
-          
+      {%csrf_token%}
       {%for field in form%}
-        <div class="form-group">
-          <label for="{{field.id_for_label}}">{{field.label}}</label>
-          <input
-            type="{{field.field.wiget.input_type}}"
-            class="form-control"
-            id="{{field.id_for_label}}"
-            placeholder="{{field.label}}"
-            name="{{field.name}}"
-           />
-          </div>
-      {% if field.errors %}
-          <span style = "color: red;">{{field.errors}}</span>>
-      {%endif%}
-          {% endfor %} 
-          
-          <button class="btn btn-primary">글쓰기</button>
-        <br />
-      </form>
+      <div class="form-group">
+        <label for="{{field.id_for_label}}">{{field.label}}</label>
+        {{field.field.wiget.name}}
+        {%ifequal field.name 'contents'%}
 
-   
+         <textarea class="form-control"
+          name="{{field.name}}"
+          placeholder="{{field.label}}"
+         ></textarea>
+
+        {%else%}
+         <input
+          type="{{field.field.wiget.input_type}}"
+          class="form-control"
+          id="{{field.id_for_label}}"
+          placeholder="{{field.label}}"
+          name="{{field.name}}"
+         />
+
+        {%endifequal%}
+      </div>
+
+        {% if field.errors %}
+        <span style="color: red">{{field.errors}}</span>> 
+        {%endif%}
+      {%endfor%}
+      
+      <button class="btn btn-primary">글쓰기</button>
+
+    </form>
   </div>
 </div>
 
