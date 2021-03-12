@@ -17,9 +17,17 @@ class LoginForm(forms.Form):
         username = cleaned_data.get("username")
         password = cleaned_data.get("password")
         if username and password:
-            fcuser = Fcuser.objects.get(username=username)
-            if check_password(password, fcuser.password):
-                self.user_id = fcuser.id
+            try:
 
+                fcuser = Fcuser.objects.get(username=username)
+
+            except:
+                self.add_error("username",  "아이디가 없습니다.")
+                # 에러가 생기면 바로 isvalid로 리턴되는 듯하다
             else:
-                self.add_error("password", "비밀번호가 틀립니다.")
+
+                if check_password(password, fcuser.password):
+                    self.user_id = fcuser.id
+
+                else:
+                    self.add_error("password", "비밀번호가 틀립니다.")

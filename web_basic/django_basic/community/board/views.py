@@ -1,19 +1,26 @@
+from django.core import paginator
 from django.db import models
 from django.shortcuts import redirect, render
 from .models import Board
 from .form import BoardForm
+from django.http import Http404
+from django.core.paginator import Paginator
 
 from fcuser.models import Fcuser
 # Create your views here.
 
 
 def board_detail(request, pk):
-    board = Board.objects.get(pk=pk)
+    try:
+        board = Board.objects.get(pk=pk)
+    except Board.DoesNotExist:
+        raise Http404("페이지를 찾을 수 없습니다.")
     return render(request, 'board_detail.html', {"board": board})
 
 
 def board_write(request):
-
+    if not request.session.get('user'):
+        return redirect("/fcuser/login/")
     if request.method == "POST":
         form = BoardForm(request.POST)
         if form.is_valid():
@@ -39,6 +46,11 @@ def board_write(request):
 
 
 def board_list(request):
-    board = Board.objects.all().order_by("-id")
+
+    all_board = Board.objects.all().order_by("-id")
+    # 페이지 번호를 get형태로 받는다.
+    page = int(request.GET.get('p' , 1))
+    paginator = Paginator(all_board, 2)
+    board = paginator.get_page(page)
 
     return render(request, 'board_list.html', {"boards": board})
