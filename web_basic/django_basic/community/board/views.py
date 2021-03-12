@@ -7,6 +7,11 @@ from fcuser.models import Fcuser
 # Create your views here.
 
 
+def board_detail(request, pk):
+    board = Board.objects.get(pk=pk)
+    return render(request, 'board_detail.html', {"board": board})
+
+
 def board_write(request):
 
     if request.method == "POST":
@@ -19,7 +24,9 @@ def board_write(request):
             board.title = title
             board.contents = contents
             user_id = request.session.get('user')
+            # primary key가 userid인 row을 가져온다.
             fcuser = Fcuser.objects.get(pk=user_id)
+            # fcuser = Fcuser.objects.all() 모든 오브젝트를 가져오는 것일듯?
             board.writer = fcuser
 
             board.save()
