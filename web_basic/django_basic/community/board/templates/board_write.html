@@ -1,6 +1,6 @@
 {% extends 'base.html'%} {% block contents %}
 <div class="row">
-  <div class="col-12">
+  <div class="col-md-12">
     <form action="" method="post">
       {%csrf_token%}
       {%for field in form%}
@@ -31,9 +31,13 @@
         {%endif%}
       {%endfor%}
       
-      <button class="btn btn-primary">글쓰기</button>
-
+      <button class="btn btn-primary btn-block">작성 완료</button>
     </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-primary btn-block" onclick="location.href='/board/list/'">돌아가기</button>
   </div>
 </div>
 

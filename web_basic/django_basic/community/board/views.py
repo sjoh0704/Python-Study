@@ -47,10 +47,10 @@ def board_write(request):
 
 def board_list(request):
 
-    all_board = Board.objects.all().order_by("-id")
+    all_boards = Board.objects.all().order_by("-id")
     # 페이지 번호를 get형태로 받는다.
-    page = int(request.GET.get('p' , 1))
-    paginator = Paginator(all_board, 2)
-    board = paginator.get_page(page)
+    page = int(request.GET.get('p', 2))
+    paginator = Paginator(all_boards, 3)
+    boards = paginator.get_page(page)
 
-    return render(request, 'board_list.html', {"boards": board})
+    return render(request, 'board_list.html', {"boards": boards})

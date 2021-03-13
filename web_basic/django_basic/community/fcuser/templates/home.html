@@ -1,0 +1,38 @@
+{%extends "base.html"%}
+{%block contents%}
+<div class="row">
+    <div class="col-12 text-center">
+        <h1>승주의 홈페이지</h1>
+    </div>
+</div>
+
+
+<div class="row">
+    {%if request.session.user%}
+    <div class="col-md-12 text-center">
+        <h2>{{fcuser.username}}님 반가워요</p>
+    </div>
+    <div class="col-md-12">
+        <button class="btn btn-primary btn-block" onclick="location.href='/fcuser/logout/'">로그아웃</button>
+    </div>
+    {%else%}
+    
+    <div class="col-md-6">
+        <button class="btn btn-primary btn-block" onclick="location.href='/fcuser/login/'">로그인</button>
+    </div>
+    <div class="col-md-6">
+        <button class="btn btn-primary btn-block" onclick="location.href='/fcuser/register/'">회원가입</button>
+    </div>
+{%endif%}
+    
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-primary btn-block" onclick="location.href='/board/list/'">글 보기</button>
+    </div>
+
+</div>
+</div>
+
+
+
+{%endblock%}

@@ -11,7 +11,7 @@
         </tr>
 
         {%for board in boards%}
-        <tr>
+        <tr onclick="location.href='/board/detail/{{board.id}}'">
           <td>{{board.id}}</td>
           <td>{{board.title}}</td>
           <td>{{board.writer}}</td>
@@ -32,7 +32,7 @@
       </li>  
       {%else%}
       <li class="page-item disabled">
-        <a href="?p={{boards.previous_page_number}}" class="page-link">이전으로</a>
+        <a href="#" class="page-link">이전으로</a>
       </li>  
 
       {%endif%}
@@ -47,7 +47,7 @@
       </li>
       {%else%}
       <li class="page-item disabled">
-        <a href="?p={{boards.next_page_number}}" class="page-link">다음으로</a>
+        <a href="#" class="page-link">다음으로</a>
       </li>
       {%endif%}
 
@@ -58,8 +58,13 @@
 </div>
 
 <div class="row">
-  <div class="col-12">
-    <button class="btn btn-primary">글쓰기</button>
+  <div class="col-md-12">
+    <button class="btn btn-block btn-primary"  onclick="location.href='/board/write'">글쓰기</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-block btn-primary" onclick="location.href='/'">홈으로</button>
   </div>
 </div>
 
