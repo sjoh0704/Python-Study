@@ -5,3 +5,4 @@ urlpatterns = [
     path('write/', views.board_write),
     path("detail/<int:pk>/", views.board_detail)
 ]
+

@@ -21,15 +21,19 @@
           id="{{field.id_for_label}}"
           placeholder="{{field.label}}"
           name="{{field.name}}"
+        
          />
 
         {%endifequal%}
+       
+
       </div>
 
         {% if field.errors %}
         <span style="color: red">{{field.errors}}</span>> 
         {%endif%}
       {%endfor%}
+
       
       <button class="btn btn-primary btn-block">작성 완료</button>
     </form>

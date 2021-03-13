@@ -5,7 +5,7 @@ from .models import Board
 from .form import BoardForm
 from django.http import Http404
 from django.core.paginator import Paginator
-
+from tag.models import Tag
 from fcuser.models import Fcuser
 # Create your views here.
 
@@ -37,6 +37,14 @@ def board_write(request):
             board.writer = fcuser
 
             board.save()
+            tags = form.cleaned_data['tag'].split(',')
+
+            for tag in tags:
+                if not tag:
+                    continue
+
+                _tag, _ = Tag.objects.get_or_create(name=tag)
+                board.tag.add(_tag)
 
             return redirect("/board/list")
     else:
@@ -49,8 +57,8 @@ def board_list(request):
 
     all_boards = Board.objects.all().order_by("-id")
     # 페이지 번호를 get형태로 받는다.
-    page = int(request.GET.get('p', 2))
-    paginator = Paginator(all_boards, 3)
+    page = int(request.GET.get('p', 1))
+    paginator = Paginator(all_boards, 4)
     boards = paginator.get_page(page)
 
     return render(request, 'board_list.html', {"boards": boards})
